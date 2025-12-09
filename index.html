@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Khady Lo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion Bibliothèque - Khady Lo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Portfolio Khady Lo</h1>
-        <p>Développement Web, Python et Bases de Données</p>
-    </header>
+  <h1>Gestion Bibliothèque</h1>
+  <p>Application démo — Niveau Bachelor</p>
 
-    <section id="projets">
-        <h2>Mes Projets</h2>
-        <ul>
-            <li>
-                <h3>Gestion d'Étudiants (Python)</h3>
-                <p>Mini-projet Python pour gérer une liste d'étudiants avec ajout, suppression et sauvegarde automatique.</p>
-                <a href="gestion_etudiants.py" target="_blank">Voir le code</a>
-            </li> 
-            <li>
-                <h3>Générateur de mots de passe (Python)</h3>
-                <p>Script Python qui génère des mots de passe sécurisés (lettres, chiffres, symboles).</p>
-                <a href="generateur_mdp.py" target="_blank">Voir le code</a>
-            </li>
-         </ul>
-    </section>
+  <section>
+    <h2>Ajouter un livre</h2>
+    <input id="title" placeholder="Titre">
+    <input id="author" placeholder="Auteur">
+    <button id="addBtn">Ajouter</button>
+  </section>
 
-    <footer>
-        <p>© 2025 Khady Lo</p>
-    </footer>
+  <section>
+    <h2>Liste des livres</h2>
+    <table id="booksTable">
+      <thead>
+        <tr><th>ID</th><th>Titre</th><th>Auteur</th><th>Actions</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
 
-    <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
