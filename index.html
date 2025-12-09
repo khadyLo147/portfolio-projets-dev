@@ -1,33 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Khady Lo - Gestion Étudiants & MDP</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Khady</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Portfolio Khady Lo</h1>
-    <p>Développement Web & Python</p>
-  </header>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#cv">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="gestion-etudiants">
-    <h2>Gestion des Étudiants</h2>
-    <input id="nomEtudiant" placeholder="Nom de l'étudiant">
-    <button id="ajouterEtudiant">Ajouter</button>
-    <button id="supprimerEtudiant">Supprimer</button>
-    <ul id="listeEtudiants"></ul>
-    <a href="gestion_etudiants.py" download>Télécharger le code Python</a>
-  </section>
+    <!-- Section Accueil -->
+    <section id="home">
+        <h1>Bonjour, je suis Khady Lo</h1>
+        <p>Étudiante en informatique de gestion | Passionnée par le développement web et Python</p>
+        <a href="#projects" class="btn">Voir mes projets</a>
+    </section>
 
-  <section id="generateur-mdp">
-    <h2>Générateur de mots de passe</h2>
-    <button id="genererMDP">Générer un mot de passe</button>
-    <p id="mdpGenere"></p>
-    <a href="generateur_mdp.py" download>Télécharger le code Python</a>
-  </section>
+    <!-- Section À propos -->
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>Je suis étudiante en informatique de gestion avec des compétences en Python, SQL, Oracle, Linux, HTML/CSS/JS, et administration de bases de données. Je suis passionnée par le développement web et les projets qui combinent technologie et créativité.</p>
+    </section>
 
-  <script src="app.js"></script>
+    <!-- Section Projets -->
+    <section id="projects">
+        <h2>Mes Projets</h2>
+
+        <!-- Projet 1 : Gestion des étudiants -->
+        <div class="project">
+            <h3>Gestion des étudiants</h3>
+            <p>Technologies : Python, HTML, CSS, JS</p>
+            <p>Description : Ce projet permet de gérer les étudiants avec ajout, suppression et affichage.</p>
+            <a href="https://github.com/khadylo147/gestion_etudiants" target="_blank" class="btn">Voir sur GitHub</a>
+        </div>
+
+        <!-- Projet 2 : Générateur de mot de passe -->
+        <div class="project">
+            <h3>Générateur de mot de passe</h3>
+            <p>Technologies : Python, HTML, CSS, JS</p>
+            <p>Description : Génère des mots de passe aléatoires sécurisés selon la longueur choisie.</p>
+
+            <label for="length">Longueur du mot de passe :</label>
+            <input type="number" id="length" value="12" min="4" max="32">
+
+            <button onclick="generatePassword()" class="btn">Générer le mot de passe</button>
+            <input type="text" id="password" readonly placeholder="Votre mot de passe">
+
+            <button onclick="copyPassword()" class="btn">Copier le mot de passe</button>
+        </div>
+    </section>
+
+    <!-- Section CV -->
+    <section id="cv">
+        <h2>Mon CV</h2>
+        <p><a href="CV_KhadyLo.pdf" download class="btn">Télécharger mon CV</a></p>
+        <ul>
+            <li>Python</li>
+            <li>SQL / Oracle / Access</li>
+            <li>HTML / CSS / JS</li>
+            <li>Linux / Administration BD</li>
+        </ul>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <form>
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+        <p>Ou via GitHub : <a href="https://github.com/khadylo147" target="_blank">Mon GitHub</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Khady Lo</p>
+    </footer>
+
+    <!-- Script JS pour générateur de mot de passe -->
+    <script>
+        function generatePassword() {
+            const length = document.getElementById('length').value;
+            const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+            let password = "";
+            for (let i = 0, n = charset.length; i < length; ++i) {
+                password += charset.charAt(Math.floor(Math.random() * n));
+            }
+            document.getElementById('password').value = password;
+        }
+
+        function copyPassword() {
+            const passwordField = document.getElementById('password');
+            passwordField.select();
+            passwordField.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(passwordField.value);
+            alert("Mot de passe copié !");
+        }
+    </script>
 </body>
 </html>
