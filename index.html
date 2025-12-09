@@ -3,71 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestion Bibliothèque - Khady Lo</title>
+  <title>Portfolio Khady Lo - Gestion Étudiants & MDP</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Gestion Bibliothèque</h1>
-  <p>Application démo — Niveau Bachelor</p>
+  <header>
+    <h1>Portfolio Khady Lo</h1>
+    <p>Développement Web & Python</p>
+  </header>
 
-  <section>
-    <h2>Ajouter un livre</h2>
-    <input id="title" placeholder="Titre">
-    <input id="author" placeholder="Auteur">
-    <button id="addBtn">Ajouter</button>
-  </section>
-
-  <section>
-    <h2>Liste des livres</h2>
-    <table id="booksTable">
-      <thead>
-        <tr><th>ID</th><th>Titre</th><th>Auteur</th><th>Actions</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </section>
-
-  <!-- Section pour le code Python -->
-  <section>
-    <h2>Code Python : gestion_etudiants.py</h2>
-    <pre>
-# Exemple de code Python
-FICHIER_ETUDIANTS = "etudiants.txt"
-
-def charger_etudiants():
-    try:
-        with open(FICHIER_ETUDIANTS, "r", encoding="utf-8") as f:
-            return [ligne.strip() for ligne in f.readlines()]
-    except FileNotFoundError:
-        return ["Alice Dupont", "Mohamed Fall", "Sophie Ndiaye"]
-
-def sauvegarder_etudiants(etudiants):
-    with open(FICHIER_ETUDIANTS, "w", encoding="utf-8") as f:
-        for e in etudiants:
-            f.write(e + "\n")
-
-etudiants = charger_etudiants()
-
-def ajouter_etudiant(nom):
-    etudiants.append(nom)
-    print(f"Étudiant ajouté : {nom}")
-
-def supprimer_etudiant(nom):
-    if nom in etudiants:
-        etudiants.remove(nom)
-        print(f"Étudiant supprimé : {nom}")
-    else:
-        print("Étudiant introuvable.")
-
-def afficher_etudiants():
-    if not etudiants:
-        print("Aucun étudiant enregistré.")
-    else:
-        print("Liste des étudiants :")
-        for e in etudiants:
-            print(f"- {e}")
-    </pre>
+  <section id="gestion-etudiants">
+    <h2>Gestion des Étudiants</h2>
+    <input id="nomEtudiant" placeholder="Nom de l'étudiant">
+    <button id="ajouterEtudiant">Ajouter</button>
+    <button id="supprimerEtudiant">Supprimer</button>
+    <ul id="listeEtudiants"></ul>
     <a href="gestion_etudiants.py" download>Télécharger le code Python</a>
+  </section>
+
+  <section id="generateur-mdp">
+    <h2>Générateur de mots de passe</h2>
+    <button id="genererMDP">Générer un mot de passe</button>
+    <p id="mdpGenere"></p>
+    <a href="generateur_mdp.py" download>Télécharger le code Python</a>
   </section>
 
   <script src="app.js"></script>
