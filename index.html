@@ -27,6 +27,49 @@
     </table>
   </section>
 
+  <!-- Section pour le code Python -->
+  <section>
+    <h2>Code Python : gestion_etudiants.py</h2>
+    <pre>
+# Exemple de code Python
+FICHIER_ETUDIANTS = "etudiants.txt"
+
+def charger_etudiants():
+    try:
+        with open(FICHIER_ETUDIANTS, "r", encoding="utf-8") as f:
+            return [ligne.strip() for ligne in f.readlines()]
+    except FileNotFoundError:
+        return ["Alice Dupont", "Mohamed Fall", "Sophie Ndiaye"]
+
+def sauvegarder_etudiants(etudiants):
+    with open(FICHIER_ETUDIANTS, "w", encoding="utf-8") as f:
+        for e in etudiants:
+            f.write(e + "\n")
+
+etudiants = charger_etudiants()
+
+def ajouter_etudiant(nom):
+    etudiants.append(nom)
+    print(f"Étudiant ajouté : {nom}")
+
+def supprimer_etudiant(nom):
+    if nom in etudiants:
+        etudiants.remove(nom)
+        print(f"Étudiant supprimé : {nom}")
+    else:
+        print("Étudiant introuvable.")
+
+def afficher_etudiants():
+    if not etudiants:
+        print("Aucun étudiant enregistré.")
+    else:
+        print("Liste des étudiants :")
+        for e in etudiants:
+            print(f"- {e}")
+    </pre>
+    <a href="gestion_etudiants.py" download>Télécharger le code Python</a>
+  </section>
+
   <script src="app.js"></script>
 </body>
 </html>
