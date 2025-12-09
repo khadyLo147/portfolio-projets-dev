@@ -1,71 +1,20 @@
-/* Style général */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
-
-/* En-tête */
-h1, p {
-  text-align: center;
-}
-
-h1 {
-  color: #4CAF50;
-  margin-top: 20px;
-}
-
-p {
-  color: #555;
-}
-
-/* Sections */
-section {
-  background-color: white;
-  margin: 20px auto;
   padding: 20px;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background: #f9f9f9;
 }
-
-/* Inputs et boutons */
-input {
-  padding: 8px;
-  margin-right: 10px;
-  width: 40%;
-  box-sizing: border-box;
-}
-
-button {
-  padding: 8px 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
+header {
   text-align: center;
+  margin-bottom: 30px;
 }
-
-th {
-  background-color: #4CAF50;
-  color: white;
+section {
+  margin-bottom: 40px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+}
+button {
+  margin: 5px;
+  padding: 5px 10px;
 }
